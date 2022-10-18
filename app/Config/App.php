@@ -24,7 +24,7 @@ class App extends BaseConfig
      *
      * @var string
      */
-    public $baseURL = 'http://localhost/Proyectos/public/MiProde';
+    public $baseURL = 'http://localhost/Proyectos/MiProde/public';
 
     /**
      * --------------------------------------------------------------------------
