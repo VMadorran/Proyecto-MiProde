@@ -2,13 +2,19 @@
   <div class="col-12">
     <div class="card">
       <div class="card-header">
-        <div class="card-tools">
-          <div class="input-group input-group-sm col-md-12">
-              <button type="button" class="btn btn-default col-md-3" data-toggle="modal" data-target="#modal-default">
+        <div class="">
+            <h1 style="font-size: 20px;font-weight: bold;color:grey;margin-bottom: 30px">
+                <?= $titulo ?>
+            </h1>
+          <div class="input-group input-group-sm" style="margin: 10px 0 10px 0">
+              <button type="button" class="btn btn-default col-md-2 float-left" data-toggle="modal" data-target="#modal-default">
                   Agregar Equipo
               </button>
-              <input type="text" name="table_search" class="form-control float-right" placeholder="Search">
-              <div class="input-group-append">
+              <input type="text" name="table_search"
+                     style="margin-left: auto"
+                     class="form-control col-md-3 float-right"
+                     placeholder="Search">
+              <div class="input-group-append" style="height: 31px">
                   <button type="submit" class="btn btn-default">
                       <i class="fas fa-search"></i>
                   </button>
@@ -60,7 +66,6 @@
       </div>
       <!-- /.card-header -->
       <div class="card-body table-responsive p-0" style="height: 300px;">
-        <h1> <?= $titulo ?> </h1>
         <table class="table table-head-fixed text-nowrap">
           <thead>
             <tr>

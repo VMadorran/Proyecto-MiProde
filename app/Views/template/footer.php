@@ -11,7 +11,7 @@
   <!-- /.control-sidebar -->
 
   <!-- Main Footer -->
-  <footer class="main-footer">
+  <footer class="main-footer" style="position: fixed;bottom: 0;width: 100%;height: 100px;margin: 0;">
     <!-- To the right -->
     <div class="float-right d-none d-sm-inline">
      
