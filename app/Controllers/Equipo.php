@@ -2,15 +2,24 @@
 
 namespace App\Controllers;
 
-use App\Models\EquipoModelo;
+use App\Models\EquipoModel;
 
 class Equipo extends BaseController
 {
     public function index()
     {
+
+        $equipoModel = new EquipoModel();
+        $equipos = $equipoModel->findAll();
+
+        $data = array(
+            'titulo' => 'Lista de Equipos',
+            'equipos' => $equipos
+        );
+
         return view('template/header')
             . view('template/sidebar')
-            . view('template/tablaEquipo')
+            . view('template/tablaEquipo', $data)
             . view('template/footer');
     }
 
@@ -22,7 +31,14 @@ class Equipo extends BaseController
     {
     }
 
-    public function eliminarEquipo()
+    public function eliminarEquipo($id = NULL)
     {
+        
+     
+        $equipoModelo = new EquipoModel();
+        $data['user'] = $equipoModelo->where('id', $id)->delete($id);
+        return $this->response->redirect(site_url('/tablaEquipo'));
+    
+         
     }
 }
