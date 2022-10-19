@@ -25,6 +25,17 @@ class Equipo extends BaseController
 
     public function agregarEquipo()
     {
+        echo 'hola';
+        $equipoModelo = new EquipoModel();
+
+        $data = [
+            'nombre' => $this->request->getPost('nombre'),
+            'mundiales_ganados' => $this->request->getPost('mundiales_ganados'),
+            'rancking_fifa' => $this->request->getPost('rancking_fifa'),
+            'mundiales_jugados' => $this->request->getPost('mundiales_jugados'),
+        ];
+        $equipoModelo->insert($data);
+        // return $this->response->redirect(site_url('/tablaEquipo'));
     }
 
     public function modificarEquipo()
@@ -33,12 +44,10 @@ class Equipo extends BaseController
 
     public function eliminarEquipo($id = NULL)
     {
-        
-     
+        echo 'hola';
         $equipoModelo = new EquipoModel();
-        $data['user'] = $equipoModelo->where('id', $id)->delete($id);
-        return $this->response->redirect(site_url('/tablaEquipo'));
-    
+        $equipoModelo->where('id', $id)->delete($id);
+       // return $this->response->redirect(site_url('/tablaEquipo'));
          
     }
 }

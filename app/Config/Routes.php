@@ -38,7 +38,7 @@ $routes->set404Override();
 $routes->get('/', 'Home::index');
 $routes->get('tablaEquipo', 'Equipo::index');
 $routes->get('/delete/(:num)','Equipo::eliminarEquipo/$1');
-
+$routes->match(['post'], '/submit-equipo', 'Equipo::agregarEquipo');
 
 /*
  * --------------------------------------------------------------------
