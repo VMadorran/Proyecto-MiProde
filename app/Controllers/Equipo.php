@@ -8,7 +8,6 @@ class Equipo extends BaseController
 {
     public function index()
     {
-
         $equipoModel = new EquipoModel();
         $equipos = $equipoModel->findAll();
 
@@ -21,12 +20,13 @@ class Equipo extends BaseController
             . view('template/sidebar')
             . view('template/tablaEquipo', $data)
             . view('template/footer');
+
     }
 
     public function agregarEquipo()
     {
-        echo 'hola';
-        $equipoModelo = new EquipoModel();
+        $equipoModel = new EquipoModel();
+        $id = $this->request->getPost('id');
 
         $data = [
             'nombre' => $this->request->getPost('nombre'),
@@ -34,20 +34,18 @@ class Equipo extends BaseController
             'rancking_fifa' => $this->request->getPost('rancking_fifa'),
             'mundiales_jugados' => $this->request->getPost('mundiales_jugados'),
         ];
-        $equipoModelo->insert($data);
-        // return $this->response->redirect(site_url('/tablaEquipo'));
-    }
-
-    public function modificarEquipo()
-    {
+        if ($id) {
+            $equipoModel->where('id', $id)->update($id, $data);
+        } else {
+            $equipoModel->insert($data);
+        }
+        return $this->response->redirect(site_url('/tablaEquipo'));
     }
 
     public function eliminarEquipo($id = NULL)
     {
-        echo 'hola';
         $equipoModelo = new EquipoModel();
         $equipoModelo->where('id', $id)->delete($id);
-       // return $this->response->redirect(site_url('/tablaEquipo'));
-         
+        return $this->response->redirect(site_url('/tablaEquipo'));
     }
 }

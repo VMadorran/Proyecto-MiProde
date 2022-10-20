@@ -31,7 +31,7 @@
   <script src="<?= base_url('plugins/bootstrap/js/bootstrap.bundle.min.js') ?>"></script>
   <!-- AdminLTE App -->
   <script src="<?= base_url('js/adminlte.min.js') ?>"></script>
-  <script scr="<?= base_url('js/equipo.js') ?>"></script>
+  <script src="<?= base_url('js/equipo.js') ?>"></script>
   </body>
 
   </html>
