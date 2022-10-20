@@ -44,7 +44,10 @@
                 <td><?= $e['mundiales_jugados'] ?></td>
                 <td>
                   <a href="<?php echo base_url('delete/'.$e['id']);?>" onclick="return bajaEquipo()"><i class="fa-solid fa-trash-can"></i></a>
-                  <a href="#" onclick="actualizarEquipo(<?= $e ?>)"><i class="fa-solid fa-pen"></i></a>
+
+                  <a href="#" onclick="actualizarEquipo(<?= $e['id']?>, '<?php echo $e['nombre'] ?>', <?=$e['mundiales_ganados'] ?>, <?= $e['ranking_fifa'] ?>, <?=$e['mundiales_jugados'] ?>)">
+                      <i class="fa-solid fa-pen"></i>
+                  </a>
                 </td>
               </tr>
             <?php endforeach; ?>

@@ -14,16 +14,16 @@ function bajaEquipo() {
         return false;
 }
 
-function actualizarEquipo($data) {
-    console.log($data)
+function actualizarEquipo($id, $nombre, $mJugados, $rFifa, $mGanados) {
     let title = document.getElementById("form-title");
     title.innerHTML = 'Actulización de Equipo';
     $(document).ready(function() {
-       // $("#id").val(data); acá iría data.id
-        $("#nombre").val('Editado');
-        $("#mundiales_jugados").val(9);
-        $("#ranking_fifa").val(10);
-        $("#mundiales_ganados").val(12);
+
+        $("#id").val($id);
+        $("#nombre").val($nombre);
+        $("#mundiales_jugados").val($mJugados);
+        $("#ranking_fifa").val($rFifa);
+        $("#mundiales_ganados").val($mGanados);
         $("#modal-default").modal('show');
     });
 }
