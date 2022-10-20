@@ -31,7 +31,7 @@ class Equipo extends BaseController
         $data = [
             'nombre' => $this->request->getPost('nombre'),
             'mundiales_ganados' => $this->request->getPost('mundiales_ganados'),
-            'rancking_fifa' => $this->request->getPost('rancking_fifa'),
+            'ranking_fifa' => $this->request->getPost('ranking_fifa'),
             'mundiales_jugados' => $this->request->getPost('mundiales_jugados'),
         ];
         if ($id) {

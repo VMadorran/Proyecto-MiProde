@@ -7,7 +7,7 @@ use CodeIgniter\Model;
 class EquipoModel extends Model
 {
     protected $table = 'equipo';
-    protected $allowedFields = ['id', 'nombre', 'mundiales_ganados', 'rancking_fifa','mundiales_jugados'];
+    protected $allowedFields = ['id', 'nombre', 'mundiales_ganados', 'ranking_fifa','mundiales_jugados'];
 
     public function getEquipo()
     {

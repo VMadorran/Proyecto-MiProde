@@ -40,7 +40,7 @@
                 <td style="visibility: hidden;"><?= $e['id'] ?></td>
                 <td><?= $e['nombre'] ?></td>
                 <td><?= $e['mundiales_ganados'] ?></td>
-                <td><?= $e['rancking_fifa'] ?></td>
+                <td><?= $e['ranking_fifa'] ?></td>
                 <td><?= $e['mundiales_jugados'] ?></td>
                 <td>
                   <a href="<?php echo base_url('delete/'.$e['id']);?>" onclick="return bajaEquipo()"><i class="fa-solid fa-trash-can"></i></a>
@@ -78,7 +78,7 @@
                                     </div>
                                     <div class="form-group col-md-12">
                                         <label>Ranking FIFA</label>
-                                        <input type="number" class="form-control" name="rancking_fifa" id="rancking_fifa" min="1" max="32">
+                                        <input type="number" class="form-control" name="ranking_fifa" id="ranking_fifa" min="1" max="32">
                                     </div>
                                     <div class="form-group col-md-12">
                                         <label>Mundiales Jugados</label>

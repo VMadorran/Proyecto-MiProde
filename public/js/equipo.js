@@ -22,7 +22,7 @@ function actualizarEquipo($data) {
        // $("#id").val(data); acá iría data.id
         $("#nombre").val('Editado');
         $("#mundiales_jugados").val(9);
-        $("#rancking_fifa").val(10);
+        $("#ranking_fifa").val(10);
         $("#mundiales_ganados").val(12);
         $("#modal-default").modal('show');
     });
