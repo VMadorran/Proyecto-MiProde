@@ -41,6 +41,7 @@ $routes->get('/delete/(:num)','Equipo::eliminarEquipo/$1');
 $routes->get('/get-equipo/(:num)','Equipo::obtenerEquipo/$1');
 $routes->post('/update-equipo/(:num)','Equipo::actualizarEquipo/$1');
 $routes->post( 'submit-equipo', 'Equipo::agregarEquipo');
+$routes->get('signuo', );
 
 /*
  * --------------------------------------------------------------------
