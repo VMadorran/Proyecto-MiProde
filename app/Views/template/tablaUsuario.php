@@ -41,17 +41,17 @@
                             <tr>
                                 <td style="visibility: hidden;"><?= $u['id'] ?></td>
                                 <td><?= $u['nombre_usuario'] ?></td>
-                                <td><?= $u['nombre_usuario'] ?></td>
-                                <td><?= $u['nombre_usuario'] ?></td>
-                                <td><?= $u['nombre_usuario'] ?></td>
-                                <td><?= $u['nombre_usuario'] ?></td>
-                                <td><?= $u['nombre_usuario'] ?></td>
-                                <td><?= $u['nombre_usuario'] ?></td>
+                                <td><?= $u['contraseña'] ?></td>
+                                <td><?= $u['dni'] ?></td>
+                                <td><?= $u['nombre'] ?></td>
+                                <td><?= $u['apellido'] ?></td>
+                                <td><?= $u['email'] ?></td>
+                                <td><?= $u['fecha_nacimiento'] ?></td>
                                 <td>
-                                    <a href="<?php echo base_url('delete/'.$u['id']);?>" onclick="return bajaUsuario()">
+                                    <a href="<?php echo base_url('delete/'.$u['id']);?>">
                                         <i class="fa-solid fa-trash-can"></i></a>
 
-                                    <a href="#" onclick="actualizarUsuario()">
+                                    <a href="#">
                                         <i class="fa-solid fa-pen"></i>
                                     </a>
                                 </td>
@@ -67,7 +67,7 @@
                     <div class="modal-content">
                         <div class="modal-header">
                             <div class="col-md-12">
-                                <h4 class="modal-title" id="form-title" style="float: left">Alta de Equipo</h4>
+                                <h4 class="modal-title" id="form-title" style="float: left">Alta de Usuario</h4>
                                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                     <span aria-hidden="true">&times;</span>
                                 </button>
@@ -78,20 +78,32 @@
                                 <div class="form-row col-md-12">
                                     <input type="hidden" class="form-control" name="id" id="id">
                                     <div class="form-group col-md-12">
+                                        <label>Nombre Usuario</label>
+                                        <input type="text" class="form-control" name="nombre_usuario" id="nombre_usuario" required oninvalid="setCustomValidity('Campo vacio')">
+                                    </div>
+                                    <div class="form-group col-md-12">
+                                        <label>Contraseña</label>
+                                        <input type="text" class="form-control" required oninvalid="setCustomValidity('Debe contener un numero')">
+                                    </div>
+                                    <div class="form-group col-md-12">
+                                        <label>DNI</label>
+                                        <input type="number" class="form-control">
+                                    </div>
+                                    <div class="form-group col-md-12">
                                         <label>Nombre</label>
-                                        <input type="text" class="form-control" name="nombre" id="nombre" required oninvalid="setCustomValidity('Campo vacio')">
+                                        <input type="text" class="form-control" required oninvalid="setCustomValidity('Debe contener un numero')">
                                     </div>
                                     <div class="form-group col-md-12">
-                                        <label>Mundiales ganados</label>
-                                        <input type="number" class="form-control" name="mundiales_ganados" id="mundiales_ganados" min="0" required oninvalid="setCustomValidity('Debe contener un numero')">
+                                        <label>Apellido</label>
+                                        <input type="text" class="form-control" required oninvalid="setCustomValidity('Debe contener un numero')">
                                     </div>
                                     <div class="form-group col-md-12">
-                                        <label>Ranking FIFA</label>
-                                        <input type="number" class="form-control" name="ranking_fifa" id="ranking_fifa" min="1" max="32">
+                                        <label>Email</label>
+                                        <input type="text" class="form-control" required oninvalid="setCustomValidity('Debe contener un numero')">
                                     </div>
                                     <div class="form-group col-md-12">
-                                        <label>Mundiales Jugados</label>
-                                        <input type="number" class="form-control" name="mundiales_jugados" id="mundiales_jugados" min="0" required oninvalid="setCustomValidity('Debe contener un numero')">
+                                        <label>Fecha Nacimiento</label>
+                                        <input type="date" class="form-control" required oninvalid="setCustomValidity('Debe contener un numero')">
                                     </div>
                                 </div>
                                 <div class="modal-footer justify-content-between">
