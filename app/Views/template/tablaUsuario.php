@@ -48,10 +48,12 @@
                                 <td><?= $u['email'] ?></td>
                                 <td><?= $u['fecha_nacimiento'] ?></td>
                                 <td>
-                                    <a href="<?php echo base_url('delete/'.$u['id']);?>">
+                                    <a href="<?php echo base_url('delete/'.$u['id']);?>"  onclick="return bajaUsuario()">
                                         <i class="fa-solid fa-trash-can"></i></a>
 
-                                    <a href="#">
+                                    <a href="#" onclick="actualizarUsuario(<?= $u['id']?>, '<?php echo $u['nombre_usuario'] ?>','<?php echo $u['contraseña'] ?>',
+                                            '<?php echo $u['dni'] ?>','<?php echo $u['nombre'] ?>','<?php echo $u['apellido'] ?>',
+                                            '<?php echo $u['email'] ?>', <?= $u['fecha_nacimiento'] ?>)">
                                         <i class="fa-solid fa-pen"></i>
                                     </a>
                                 </td>
@@ -79,31 +81,36 @@
                                     <input type="hidden" class="form-control" name="id" id="id">
                                     <div class="form-group col-md-12">
                                         <label>Nombre Usuario</label>
-                                        <input type="text" class="form-control" name="nombre_usuario" id="nombre_usuario" required oninvalid="setCustomValidity('Campo vacio')">
+                                        <input type="text" class="form-control" name="nombre_usuario" id="nombre_usuario"
+                                               required oninvalid="setCustomValidity('Campo vacio')">
                                     </div>
                                     <div class="form-group col-md-12">
                                         <label>Contraseña</label>
-                                        <input type="text" class="form-control" required oninvalid="setCustomValidity('Debe contener un numero')">
+                                        <input type="text" class="form-control" name="contraseña" id="contraseña"
+                                               required oninvalid="setCustomValidity('Debe contener un numero')">
                                     </div>
                                     <div class="form-group col-md-12">
                                         <label>DNI</label>
-                                        <input type="number" class="form-control">
+                                        <input type="number" class="form-control" name="dni" id="dni">
                                     </div>
                                     <div class="form-group col-md-12">
                                         <label>Nombre</label>
-                                        <input type="text" class="form-control" required oninvalid="setCustomValidity('Debe contener un numero')">
+                                        <input type="text" class="form-control" required name="nombre" id="nombre"
+                                               oninvalid="setCustomValidity('Debe contener el nombre')">
                                     </div>
                                     <div class="form-group col-md-12">
                                         <label>Apellido</label>
-                                        <input type="text" class="form-control" required oninvalid="setCustomValidity('Debe contener un numero')">
+                                        <input type="text" class="form-control" name="apellido" id="apellido"
+                                               required oninvalid="setCustomValidity('Debe contener el apellido')">
                                     </div>
                                     <div class="form-group col-md-12">
                                         <label>Email</label>
-                                        <input type="text" class="form-control" required oninvalid="setCustomValidity('Debe contener un numero')">
+                                        <input type="text" class="form-control" name="email" id="email"
+                                               required oninvalid="setCustomValidity('Debe contener un email')">
                                     </div>
                                     <div class="form-group col-md-12">
                                         <label>Fecha Nacimiento</label>
-                                        <input type="date" class="form-control" required oninvalid="setCustomValidity('Debe contener un numero')">
+                                        <input type="date" class="form-control" name="fecha_nacimiento" id="fecha_nacimiento">
                                     </div>
                                 </div>
                                 <div class="modal-footer justify-content-between">

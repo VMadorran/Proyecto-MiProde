@@ -32,6 +32,7 @@
   <!-- AdminLTE App -->
   <script src="<?= base_url('js/adminlte.min.js') ?>"></script>
   <script src="<?= base_url('js/equipo.js') ?>"></script>
+  <script src="<?= base_url('js/usuario.js') ?>"></script>
   </body>
 
   </html>
