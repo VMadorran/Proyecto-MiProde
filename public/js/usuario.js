@@ -19,6 +19,7 @@ function actualizarUsuario($id, $nombre_usuario, $contraseña, $dni, $nombre, $a
     title.innerHTML = 'Actulización de Usuario';
     $(document).ready(function() {
 
+        let fecha =document.getElementById('fecha_nacimiento').valueAsDate = new Date($fecha_nac);
         $("#id").val($id);
         $("#nombre_usuario").val($nombre_usuario);
         $("#contraseña").val($contraseña);
@@ -26,7 +27,7 @@ function actualizarUsuario($id, $nombre_usuario, $contraseña, $dni, $nombre, $a
         $("#nombre").val($nombre);
         $("#apellido").val($apellido);
         $("#email").val($email);
-        $("#fecha_nac").val($fecha_nac);
+        $("#fecha_nac").val(fecha);
         $("#modal-default").modal('show');
     });
 }

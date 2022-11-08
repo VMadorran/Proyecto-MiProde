@@ -4,7 +4,7 @@ namespace App\Controllers;
 
 use App\Models\EquipoModel;
 
-class Equipo extends BaseController
+class EquipoController extends BaseController
 {
     public function index()
     {

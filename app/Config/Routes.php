@@ -36,23 +36,37 @@ $routes->set404Override();
 // We get a performance increase by specifying the default
 // route since we don't have to scan directories.
 $routes->get('/', 'Home::index');
-$routes->get('tablaEquipo', 'Equipo::index');
-$routes->get('/delete/(:num)','Equipo::eliminarEquipo/$1');
-$routes->get('/get-equipo/(:num)','Equipo::obtenerEquipo/$1');
-$routes->post('/update-equipo/(:num)','Equipo::actualizarEquipo/$1');
-$routes->post( 'submit-equipo', 'Equipo::agregarEquipo');
+$routes->get('/tablaEquipo', 'EquipoController::index');
+$routes->get('/equipo/delete/(:num)','EquipoController::eliminarEquipo/$1');
+$routes->get('/get-equipo/(:num)','EquipoController::obtenerEquipo/$1');
+$routes->post('/update-equipo/(:num)','EquipoController::actualizarEquipo/$1');
+$routes->post( 'submit-equipo', 'EquipoController::agregarEquipo');
 
 
 /*
  *  USUARIOS
  */
-
 $routes->get('tablaUsuario', 'UsuarioController::index');
-$routes->get('/delete/(:num)','UsuarioController::eliminarUsuario/$1');
+$routes->get('/usuario/delete/(:num)','UsuarioController::eliminarUsuario/$1');
 $routes->get('/get-usuario/(:num)','UsuarioController::obtenerUsuario/$1');
 $routes->post('/update-usuario/(:num)','UsuarioController::actualizarUsuario/$1');
 $routes->post( 'submit-usuario', 'UsuarioController::agregarUsuario');
 
+
+/*
+ *   LOGIN
+ */
+$routes->get('/login', 'LoginController::index');
+$routes->post('login-user','LoginController::login');
+$routes->get('/log-out', 'LoginController::logout');
+
+
+/*
+ *  SIGNUP
+ */
+
+$routes->get('/signup', 'SignUpController::index');
+$routes->post('/new-user','SignupController::signUp');
 
 /*
  * --------------------------------------------------------------------

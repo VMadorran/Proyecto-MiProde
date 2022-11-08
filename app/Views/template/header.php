@@ -154,5 +154,8 @@ scratch. This page gets rid of all links and provides the needed markup only.
         </a>
       </li>
     </ul>
+    <a href="<?= base_url('/log-out')?>">
+        <i class="fa-solid fa-right-from-bracket"></i>
+    </a>
   </nav>
   <!-- /.navbar -->
