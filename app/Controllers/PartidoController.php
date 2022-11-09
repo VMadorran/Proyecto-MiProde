@@ -8,14 +8,17 @@ use App\Models\EquipoModel;
 class PartidoController extends BaseController
 {
 
+
     public function index()
     {
 
         $equipoModel = new EquipoModel();
-        $equipos = $equipoModel->findAll();
+        $equiposLocales = $equipoModel->findAll();
+        $equiposVisitantes = $equipoModel->findAll();
 
         $data = array(
-            'equipos' => $equipos
+            'equiposLocales' => $equiposLocales,
+            'equiposVisitantes' => $equiposVisitantes
         );
 
         return view('template/header')
@@ -41,6 +44,12 @@ class PartidoController extends BaseController
             $partidoModel->insert($data);
         }
 
+    }
+
+    public function findAllVisitantes($equipoLocal) {
+        $equipoModel = new EquipoModel();
+        $equiposLocales = $equipoModel->findAll();
+        return  $equiposLocales;
     }
 
 }

@@ -16,17 +16,20 @@
 
         </div>
         <div>
-            <div class="form-group">
-                <select class="form-select" id="local" aria-label="Default select example" onchange="onLocalChange()">
-                    <?php foreach ($equipos as $e) : ?>
+            <div class="form-group col-md-12">
+                <p selected="">Equipo Local</p>
+                <select class="form-select col-md-12" id="local" aria-label="Default select example" onchange="onLocalChange()">
+                    <option selected="">--</option>
+                    <?php foreach ($equiposLocales as $e) : ?>
                         <option id="id_local" name="id_local" value="<?= $e['id'] ?>"><?= $e['nombre'] ?> </option>
                     <?php endforeach; ?>
                 </select>
             </div>
-            <div class="form-group">
-                <select class="form-select" id="visitante" aria-label="Default select example">
-                    <option selected="">Equipo Visitante</option>
-                    <?php foreach ($equipos as $e) : ?>
+            <div class="form-group col-md-12">
+                <p selected="">Equipo Visitante</p>
+                <select class="form-select col-md-12" id="visitante" aria-label="Default select example">
+                    <option selected="">--</option>
+                    <?php foreach ($equiposVisitantes as $e) : ?>
                         <option id="id_visitante" name="id_visitante" value="<?= $e['id'] ?>"><?= $e['nombre'] ?></option>
                     <?php endforeach; ?>
                 </select>
