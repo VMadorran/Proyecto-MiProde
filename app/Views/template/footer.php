@@ -33,6 +33,7 @@
   <script src="<?= base_url('js/adminlte.min.js') ?>"></script>
   <script src="<?= base_url('js/equipo.js') ?>"></script>
   <script src="<?= base_url('js/usuario.js') ?>"></script>
+  <script src="<?= base_url('js/partido.js')?>"></script>
   </body>
 
   </html>

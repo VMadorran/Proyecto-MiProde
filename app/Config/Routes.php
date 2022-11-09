@@ -52,7 +52,6 @@ $routes->get('/get-usuario/(:num)','UsuarioController::obtenerUsuario/$1');
 $routes->post('/update-usuario/(:num)','UsuarioController::actualizarUsuario/$1');
 $routes->post( 'submit-usuario', 'UsuarioController::agregarUsuario');
 
-
 /*
  *   LOGIN
  */
@@ -67,6 +66,13 @@ $routes->get('/log-out', 'LoginController::logout');
 
 $routes->get('/signup', 'SignUpController::index');
 $routes->post('/new-user','SignupController::signUp');
+
+
+/*
+ *   PARTIDO
+ */
+$routes->get('/create-partido', 'PartidoController::index');
+$routes->post('/new-partido','PartidoController::newPartido');
 
 /*
  * --------------------------------------------------------------------

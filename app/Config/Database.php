@@ -35,7 +35,7 @@ class Database extends Config
         'hostname' => 'localhost',
         'username' => 'root',
         'password' => '',
-        'database' => 'equipos_mundial',
+        'database' => 'mi_prode',
         'DBDriver' => 'MySQLi',
         'DBPrefix' => '',
         'pConnect' => false,
