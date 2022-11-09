@@ -59,6 +59,10 @@ $routes->get('/login', 'LoginController::index');
 $routes->post('login-user','LoginController::login');
 $routes->get('/log-out', 'LoginController::logout');
 
+/*
+ * FASE
+ */
+$routes->get('createFase', 'FaseController::index');
 
 /*
  *  SIGNUP
