@@ -2,7 +2,9 @@
 
 namespace App\Controllers;
 
+use App\Models\EquipoModel;
 use App\Models\FaseModel;
+use App\Models\PartidoModel;
 
 class FaseController extends BaseController
 {
@@ -13,39 +15,51 @@ class FaseController extends BaseController
 
         $data = array(
             'titulo' => 'Lista de Fases',
-            'fase' => $fases
+            'fases' => $fases
         );
 
         return view('template/header')
             . view('template/sidebar')
-            . view('fase/create-fase', $data)
+            . view('fase/table-fase', $data)
             . view('template/footer');
 
     }
 
-    /*public function agregarEquipo()
+    public function addFase()
     {
-        $equipoModel = new EquipoModel();
-        $id = $this->request->getPost('id');
-
+        $faseModel = new FaseModel();
+        $id = $this->request->getPost('id_fase');
         $data = [
             'nombre' => $this->request->getPost('nombre'),
-            'mundiales_ganados' => $this->request->getPost('mundiales_ganados'),
-            'ranking_fifa' => $this->request->getPost('ranking_fifa'),
-            'mundiales_jugados' => $this->request->getPost('mundiales_jugados'),
+            'fecha_inicio' => $this->request->getPost('fecha_inicio'),
+            'fecha_fin' => $this->request->getPost('fecha_fin')
         ];
         if ($id) {
-            $equipoModel->where('id', $id)->update($id, $data);
+            $faseModel->where('id_fase', $id)->update($id, $data);
         } else {
-            $equipoModel->insert($data);
+            $faseModel->insert($data);
         }
-        return $this->response->redirect(site_url('/tablaEquipo'));
+        return $this->response->redirect(site_url('/table-fase'));
     }
 
-    public function eliminarEquipo($id = NULL)
+    public function deleteFase($id = NULL)
     {
-        $equipoModelo = new EquipoModel();
-        $equipoModelo->where('id', $id)->delete($id);
-        return $this->response->redirect(site_url('/tablaEquipo'));
-    }*/
+        $faseModel = new FaseModel();
+        $faseModel->where('id_fase', $id)->delete($id);
+        return $this->response->redirect(site_url('/table-fase'));
+    }
+
+    public function  getPartidos($id = NULL){
+
+        $faseModel= new FaseModel();
+        $partidos=$faseModel->getPartidosFase($id);
+        $data = array('partidos'=>$partidos);
+
+        return view('template/header')
+            . view('template/sidebar')
+            . view('fase/partidos-fase', $data)
+            . view('template/footer');
+
+    }
+
 }
