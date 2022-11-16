@@ -37,20 +37,18 @@ $routes->set404Override();
 // route since we don't have to scan directories.
 $routes->get('/', 'Home::index');
 $routes->get('/tablaEquipo', 'EquipoController::index');
-$routes->get('/equipo/delete/(:num)','EquipoController::eliminarEquipo/$1');
-$routes->get('/get-equipo/(:num)','EquipoController::obtenerEquipo/$1');
-$routes->post('/update-equipo/(:num)','EquipoController::actualizarEquipo/$1');
-$routes->post( 'submit-equipo', 'EquipoController::agregarEquipo');
+$routes->get('/equipo/delete/(:num)','EquipoController::deleteEquipo/$1');
+$routes->get('/get-equipo/(:num)','EquipoController::getEquipo/$1');
+$routes->post( 'submit-equipo', 'EquipoController::createEquipo');
 
 
 /*
  *  USUARIOS
  */
 $routes->get('tablaUsuario', 'UsuarioController::index');
-$routes->get('/usuario/delete/(:num)','UsuarioController::eliminarUsuario/$1');
-$routes->get('/get-usuario/(:num)','UsuarioController::obtenerUsuario/$1');
-$routes->post('/update-usuario/(:num)','UsuarioController::actualizarUsuario/$1');
-$routes->post( 'submit-usuario', 'UsuarioController::agregarUsuario');
+$routes->get('/usuario/delete/(:num)','UsuarioController::deleteUsuario/$1');
+$routes->get('/get-usuario/(:num)','UsuarioController::getUsuario/$1');
+$routes->post( 'submit-usuario', 'UsuarioController::createUsuario');
 
 /*
  *   LOGIN
@@ -75,8 +73,9 @@ $routes->post('/new-user','SignupController::signUp');
 /*
  *   PARTIDO
  */
-$routes->get('/create-partido', 'PartidoController::index');
-$routes->post('/new-partido','PartidoController::newPartido');
+$routes->get('/list-partido', 'PartidoController::index');
+$routes->post('submit-partido','PartidoController::createPartido');
+$routes->post( '/list-partido', 'PartidoController::findAllVisitantes');
 
 /*
  * --------------------------------------------------------------------

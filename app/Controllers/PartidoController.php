@@ -8,28 +8,29 @@ use App\Models\EquipoModel;
 class PartidoController extends BaseController
 {
 
-
     public function index()
     {
 
         $equipoModel = new EquipoModel();
+        $partidoModel = new PartidoModel();
+        $partidos = $partidoModel->findAllPartidos();
         $equiposLocales = $equipoModel->findAll();
         $equiposVisitantes = $equipoModel->findAll();
 
         $data = array(
             'equiposLocales' => $equiposLocales,
-            'equiposVisitantes' => $equiposVisitantes
+            'equiposVisitantes' => $equiposVisitantes,
+            'partidos' => $partidos
         );
 
         return view('template/header')
             . view('template/sidebar')
-            . view('partido/create-partido', $data)
+            . view('partido/list-partido', $data)
             . view('template/footer');
     }
 
-    public function newPartido()
+    public function createPartido()
     {
-
         $partidoModel = new PartidoModel();
         $id = $this->request->getPost('id_partido');
         $data = [
@@ -38,15 +39,23 @@ class PartidoController extends BaseController
             'id_local' => $this->request->getPost('id_local'),
             'id_visitante' => $this->request->getPost('id_visitante')
         ];
+        echo $data['id_local'];
+        echo $id;
         if ($id) {
+            echo "in update";
             $partidoModel->where('id_partido', $id)->update($id, $data);
         } else {
-            $partidoModel->insert($data);
+             echo "in insert";
+             $partidoModel->insert($data);
         }
+        //return $this->response->redirect(site_url('/list-partido'));
 
     }
 
-    public function findAllVisitantes($equipoLocal) {
+    public function findAllVisitantes($equipoLocal = NULL) {
+        foreach ($equipoLocal.equipos as $e) {
+            echo $e;
+        }
         $equipoModel = new EquipoModel();
         $equiposLocales = $equipoModel->findAll();
         return  $equiposLocales;

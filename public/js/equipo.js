@@ -16,7 +16,7 @@ function bajaEquipo() {
 
 function actualizarEquipo($id, $nombre, $mJugados, $rFifa, $mGanados) {
     let title = document.getElementById("form-title");
-    title.innerHTML = 'Actulización de EquipoController';
+    title.innerHTML = 'Actulización de Equipo';
     $(document).ready(function() {
 
         $("#id").val($id);

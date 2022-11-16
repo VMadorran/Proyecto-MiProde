@@ -23,7 +23,7 @@ class UsuarioController extends BaseController
 
     }
 
-    public function agregarUsuario()
+    public function createUsuario()
     {
         $usuarioModel = new UsuarioModel();
         $id = $this->request->getPost('id');
@@ -45,7 +45,7 @@ class UsuarioController extends BaseController
         return $this->response->redirect(site_url('/tablaUsuario'));
     }
 
-    public function eliminarUsuario($id = NULL)
+    public function deleteUsuario($id = NULL)
     {
         $usuarioModelo = new UsuarioModel();
         $usuarioModelo->where('id', $id)->delete($id);

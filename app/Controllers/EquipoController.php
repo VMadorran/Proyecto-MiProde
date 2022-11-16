@@ -23,7 +23,7 @@ class EquipoController extends BaseController
 
     }
 
-    public function agregarEquipo()
+    public function createEquipo()
     {
         $equipoModel = new EquipoModel();
         $id = $this->request->getPost('id');
@@ -42,7 +42,7 @@ class EquipoController extends BaseController
         return $this->response->redirect(site_url('/tablaEquipo'));
     }
 
-    public function eliminarEquipo($id = NULL)
+    public function deleteEquipo($id = NULL)
     {
         $equipoModelo = new EquipoModel();
         $equipoModelo->where('id', $id)->delete($id);
