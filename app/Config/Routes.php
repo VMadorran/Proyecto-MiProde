@@ -60,7 +60,11 @@ $routes->get('/log-out', 'LoginController::logout');
 /*
  * FASE
  */
-$routes->get('createFase', 'FaseController::index');
+$routes->get('/table-fase', 'FaseController::index');
+$routes->get('/fase/delete/(:num)','FaseController::deleteFase/$1');
+$routes->get('/get-fase/(:num)','FaseController::getFase/$1');
+$routes->get('/get-partidos/(:num)','FaseController::getPartidos/$1');
+$routes->post( '/submit-fase', 'FaseController::addFase');
 
 /*
  *  SIGNUP
