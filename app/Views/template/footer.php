@@ -35,6 +35,7 @@
   <script src="<?= base_url('js/usuario.js') ?>"></script>
   <script src="<?= base_url('js/partido.js')?>"></script>
   <script src="<?=base_url('js/fase.js')?>"></script>
+  <script src="<?=base_url('js/torneo.js')?>"></script>
   </body>
 
   </html>
