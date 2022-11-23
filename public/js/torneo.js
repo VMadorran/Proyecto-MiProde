@@ -1,23 +1,24 @@
+function guardarTorneo() {
+    if ((validar() == true)(confirm("¿Desea guardar el nuevo torneo?") == true)) {
 
-function guardarFase() {
-    if ((validar() == true)(confirm("¿Desea guardar la nueva fase?") == true)) {
         return true;
     } else
         return false;
 }
 
-function bajaFase() {
-    if (confirm("¿Desea eliminar la fase selccionada?") == true) {
+function bajaTorneo() {
+
+    if (confirm("¿Desea eliminar el toeneo seleccionado?") == true) {
         return true;
     } else
         return false;
 }
 
-function actualizarFase($id, $nombre, $fechaI, $fechaF) {
-
+function actualizarTorneo($id, $nombre, $fechaI, $fechaF) {
     let title = document.getElementById("form-title");
-    title.innerHTML = 'Actulización de Fase';
+    title.innerHTML = 'Actulización de Torneo';
     $(document).ready(function() {
+
         $("#id").val($id);
         $("#nombre").val($nombre);
         $("#fecha_inicio").val($fechaI);
@@ -34,6 +35,7 @@ function validar() {
         if (x.elements[i].value == "") {
             validos = false;
         }
+
     }
     return validos;
 }

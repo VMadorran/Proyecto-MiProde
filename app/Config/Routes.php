@@ -47,26 +47,29 @@ $routes->post( 'submit-equipo', 'EquipoController::agregarEquipo');
  *  USUARIOS
  */
 $routes->get('tablaUsuario', 'UsuarioController::index');
-$routes->get('/usuario/delete/(:num)','UsuarioController::eliminarUsuario/$1');
-$routes->get('/get-usuario/(:num)','UsuarioController::obtenerUsuario/$1');
-$routes->post('/update-usuario/(:num)','UsuarioController::actualizarUsuario/$1');
+$routes->get('usuario/delete/(:num)','UsuarioController::eliminarUsuario/$1');
+$routes->get('get-usuario/(:num)','UsuarioController::obtenerUsuario/$1');
+$routes->post('update-usuario/(:num)','UsuarioController::actualizarUsuario/$1');
 $routes->post( 'submit-usuario', 'UsuarioController::agregarUsuario');
 
 /*
  *   LOGIN
  */
-$routes->get('/login', 'LoginController::index');
+$routes->get('login', 'LoginController::index');
 $routes->post('login-user','LoginController::login');
-$routes->get('/log-out', 'LoginController::logout');
+$routes->get('log-out', 'LoginController::logout');
 
 /*
  * FASE
  */
-$routes->get('/table-fase', 'FaseController::index');
-$routes->get('/fase/delete/(:num)','FaseController::deleteFase/$1');
-$routes->get('/get-fase/(:num)','FaseController::getFase/$1');
-$routes->get('/get-partidos/(:num)','FaseController::getPartidos/$1');
-$routes->post( '/submit-fase', 'FaseController::addFase');
+$routes->get('table-fase', 'FaseController::index');
+$routes->get('fase/delete/(:num)','FaseController::deleteFase/$1');
+$routes->get('get-fase/(:num)','FaseController::getFase/$1');
+$routes->get('get-partidos/(:num)','FaseController::getPartidos/$1');
+$routes->get('add-partidos/(:num)','FaseController::addPartidos/$1');
+$routes->post('submit-fase', 'FaseController::addFase');
+$routes->get('fase/add-partido/(:any)', 'FaseController::addPartidoToFase/$1');
+$routes->get('fase/delete-partido/(:any)', 'FaseController::deletePartido/$1');
 
 /*
  *  SIGNUP
@@ -81,6 +84,25 @@ $routes->post('/new-user','SignupController::signUp');
  */
 $routes->get('/create-partido', 'PartidoController::index');
 $routes->post('/new-partido','PartidoController::newPartido');
+
+
+
+/*
+ * TORNEO
+ */
+$routes->get('list-torneo','TorneoController::index');
+$routes->post('submint-torneo', 'TorneoController::addTorneo');
+$routes->get('torneo/delete/(:num)','TorneoController::deleteTorneo/$1');
+$routes->get('add-fases/(:num)','TorneoController::listFasesWithoutTorneo/$1');
+$routes->get('torneo/add-fase/(:any)', 'TorneoController::addFaseToTorneo/$1');
+$routes->get('get-fases/(:num)','TorneoController::listFasesOfTorneo/$1');
+$routes->get('torneo/delete-fase/(:any)','TorneoController::deleteFaseOfTorneo/$1');
+
+/*
+ *  FIXTURE
+ */
+$routes->get('fixture','FixtureController::index');
+
 
 /*
  * --------------------------------------------------------------------

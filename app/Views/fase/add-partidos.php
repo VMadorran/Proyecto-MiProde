@@ -1,10 +1,11 @@
+
 <div class="row">
     <div class="col-12">
         <div class="card">
             <div class="card-header">
                 <div class="">
                     <h1 style="font-size: 20px;font-weight: bold;color:grey;margin-bottom: 30px">
-                        Partidos de la fase
+                        Partidos para agregar
                     </h1>
                     <div class="input-group input-group-sm" style="margin: 10px 0 10px 0">
                         <a class="btn btn-primary" href="<?php echo base_url('/table-fase')?>" role="button"
@@ -17,8 +18,6 @@
                             <button type="submit" class="btn btn-default">
                                 <i class="fas fa-search"></i>
                             </button>
-
-
                         </div>
                     </div>
                 </div>
@@ -27,7 +26,7 @@
                     <table class="table table-head-fixed text-nowrap">
                         <thead>
                         <tr>
-                            <th></th>
+                            <th style="visibility: hidden;">Id</th>
                             <th>Fecha</th>
                             <th>Hora</th>
                             <th>Local</th>
@@ -43,8 +42,10 @@
                                 <td><?= $p['fecha'] ?></td>
                                 <td><?= $p['hora'] ?></td>
                                 <td><?= $p['local'] ?></td>
-                                <td><?= $p['visitante'] ?></td>
-                                <td> <a href="<?php echo base_url('/fase/delete-partido/'.($id).'/'.$p['id_partido']);?>" ><i class="fa-solid fa-trash-can"></i></a></td>
+                                <td><?= $p['visitante'] ?>
+                                <td>
+                                    <a href="<?php echo base_url('fase/add-partido/'. ($id).'/'.$p['id_partido']); ?>">
+                                    <i class="fa-sharp fa-solid fa-plus"></i></a></td>
                             </tr>
                         <?php endforeach; ?>
 
@@ -57,4 +58,5 @@
             <!-- /.card -->
         </div>
     </div>
+
 
