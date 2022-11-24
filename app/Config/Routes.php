@@ -104,6 +104,16 @@ $routes->get('torneo/delete-fase/(:any)','TorneoController::deleteFaseOfTorneo/$
 $routes->get('fixture','FixtureController::index');
 
 
+
+
+
+
+/*
+ * APUESTAS
+ */
+$routes->get('torneos', 'ApuestaController::index');
+$routes->get('apuesta/list-apuesta/(:any)', 'ApuestaController::apuestas/$1');
+
 /*
  * --------------------------------------------------------------------
  * Additional Routing

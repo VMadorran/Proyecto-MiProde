@@ -8,7 +8,7 @@
                     </h1>
                     <div class="input-group input-group-sm" style="margin: 10px 0 10px 0">
                         <button type="button" class="btn btn-default col-md-2 float-left" data-toggle="modal" data-target="#modal-default">
-                            Agregar Pronostico
+                            Agregar Apuesta
                         </button>
                         <input type="text" name="table_search"
                                style="margin-left: auto"
@@ -26,22 +26,20 @@
                     <table class="table table-head-fixed text-nowrap">
                         <thead>
                         <tr>
+                            <th>Usuario</th>
+                            <th>Partido</th>
+                            <th>Resultado</th>
                             <th>Fecha</th>
-                            <th>Hora</th>
-                            <th>Equipo Local</th>
-                            <th>Equipo Visitante</th>
-                            <th>Fase</th>
-                            <th>Acciones</th>
+                            <th>Operaciones</th>
                         </tr>
                         </thead>
                         <tbody>
-                        <?php foreach ($partidos as $e) : ?>
+                        <?php foreach ($apuestas as $e) : ?>
                             <tr>
+                                <td><?= $e['usuario'] ?></td>
+                                <td><?= $e['partido'] ?></td>
+                                <td><?= $e['resultado'] ?></td>
                                 <td><?= $e['fecha'] ?></td>
-                                <td><?= $e['hora'] ?></td>
-                                <td><?= $e['local'] ?></td>
-                                <td><?= $e['visitante'] ?></td>
-                                <td><?= $e['fase'] ?></td>
                                 <td>
                                     <a href="<?php echo base_url('partido/delete/'.$e['id']);?>" onclick="return deletePartido()"><i class="fa-solid fa-trash-can"></i></a>
 
@@ -61,38 +59,40 @@
                     <div class="modal-content">
                         <div class="modal-header">
                             <div class="col-md-12">
-                                <h4 class="modal-title" id="form-title" style="float: left">Alta de Equipo</h4>
+                                <h4 class="modal-title" id="form-title" style="float: left">Alta de Apuesta</h4>
                                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                     <span aria-hidden="true">&times;</span>
                                 </button>
                             </div>
                         </div>
                         <div class="modal-body">
-                            <form action="<?= site_url('/submit-partido')?>" id="formulario-partido" method="POST">
-                                <div class="form-group col-md-12">
-                                    <input type="hidden" class="form-control" id="id" name="id">
-                                    <label>Fecha</label>
-                                    <input type="date" class="form-control" id="fecha" name="fecha">
-                                </div>
-                                <div class="form-group col-md-12">
-                                    <label>Hora</label>
-                                    <input type="time" class="form-control" id="hora" name="hora">
-                                </div>
+                            <form action="<?= site_url('/submit-apuesta')?>" id="formulario-partido" method="POST">
+
+                                <input type="hidden" class="form-control" id="id" name="id">
                                 <div class="form-group col-md-11 ml-1">
-                                    <label selected="">Equipo Local</label>
+                                    <label selected="">Fase</label>
                                     <select class="form-select col-md-12" id="local_select"  name="local_select" aria-label="Default select example">
                                         <option selected="">--</option>
-                                        <?php foreach ($equiposLocales as $el) : ?>
-                                            <option id="id_local" name="id_local" value="<?php echo $el['id'] ?>"><?= $el['nombre'] ?> </option>
+                                        <?php foreach ($fases as $f) : ?>
+                                            <option id="id_local" name="id_local" value="<?php echo $f['id'] ?>"><?= $f['nombre'] ?> </option>
                                         <?php endforeach; ?>
                                     </select>
                                 </div>
                                 <div class="form-group col-md-11 ml-2">
-                                    <label selected="">Equipo Visitante</label>
+                                    <label selected="">Partido</label>
                                     <select class="form-select col-md-12" id="visitante_select" name="visitante_select" aria-label="Default select example">
                                         <option selected="">--</option>
-                                        <?php foreach ($equiposVisitantes as $ev) : ?>
-                                            <option id="<?php echo $ev['nombre'] ?>" name="id_visitante" value="<?php echo $ev['id'] ?>"><?= $ev['nombre'] ?></option>
+                                        <?php foreach ($partidos as $p) : ?>
+                                            <option id="<?php echo $p['nombre'] ?>" name="id_visitante" value="<?php echo $p['id'] ?>"><?= $p['nombre'] ?></option>
+                                        <?php endforeach; ?>
+                                    </select>
+                                </div>
+                                <div class="form-group col-md-11 ml-2">
+                                    <label selected="">Resultado</label>
+                                    <select class="form-select col-md-12" id="visitante_select" name="visitante_select" aria-label="Default select example">
+                                        <option selected="">--</option>
+                                        <?php foreach ($resultados as $r) : ?>
+                                            <option id="<?php echo $r['descripcion'] ?>" name="id_visitante" value="<?php echo $r['id'] ?>"><?= $r['descripcion'] ?></option>
                                         <?php endforeach; ?>
                                     </select>
                                 </div>

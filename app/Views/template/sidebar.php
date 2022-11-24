@@ -81,6 +81,22 @@
                         </p>
                     </a>
                 </li>
+                <li class="nav-item">
+                    <a href="<?= site_url('/list-fixture')?>" class="nav-link">
+                        <i class="nav-icon fa fa-list"></i>
+                        <p>
+                           Fixture
+                        </p>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="<?= site_url('/torneos')?>" class="nav-link">
+                        <i class="nav-icon fa fa-money-bill-wave"></i>
+                        <p>
+                            Apuestas
+                        </p>
+                    </a>
+                </li>
             
             </ul>
         </nav>
