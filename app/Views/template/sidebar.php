@@ -82,7 +82,7 @@
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a href="<?= site_url('/list-fixture')?>" class="nav-link">
+                    <a href="<?= site_url('/fixture')?>" class="nav-link">
                         <i class="nav-icon fa fa-list"></i>
                         <p>
                            Fixture

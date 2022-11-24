@@ -69,22 +69,10 @@
                             <form action="<?= site_url('/submit-apuesta')?>" id="formulario-partido" method="POST">
 
                                 <input type="hidden" class="form-control" id="id" name="id">
-                                <div class="form-group col-md-11 ml-1">
-                                    <label selected="">Fase</label>
-                                    <select class="form-select col-md-12" id="local_select"  name="local_select" aria-label="Default select example">
-                                        <option selected="">--</option>
-                                        <?php foreach ($fases as $f) : ?>
-                                            <option id="id_local" name="id_local" value="<?php echo $f['id'] ?>"><?= $f['nombre'] ?> </option>
-                                        <?php endforeach; ?>
-                                    </select>
-                                </div>
                                 <div class="form-group col-md-11 ml-2">
                                     <label selected="">Partido</label>
                                     <select class="form-select col-md-12" id="visitante_select" name="visitante_select" aria-label="Default select example">
                                         <option selected="">--</option>
-                                        <?php foreach ($partidos as $p) : ?>
-                                            <option id="<?php echo $p['nombre'] ?>" name="id_visitante" value="<?php echo $p['id'] ?>"><?= $p['nombre'] ?></option>
-                                        <?php endforeach; ?>
                                     </select>
                                 </div>
                                 <div class="form-group col-md-11 ml-2">

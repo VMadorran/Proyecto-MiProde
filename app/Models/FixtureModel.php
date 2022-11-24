@@ -6,6 +6,22 @@ use CodeIgniter\Model;
 
 class FixtureModel extends Model
 {
+
+    public function getFasesByTorneoId($id) {
+     /*   $builder = $this->db->table('fase f');
+
+       return $builder->select('f.*')
+            ->where('f.id_torneo', $id)->get()->getResultArray();*/
+
+        $builder = $this->db->table('fase f');
+        return $builder->select('f.nombre fase, p.fecha fecha_partido, p.hora hora_partido, el.nombre local, ev.nombre visitante')
+            ->join('partido p', 'f.id = p.id_fase')
+            ->join('equipo el', 'p.id_local = el.id')
+            ->join('equipo ev', 'p.id_visitante = ev.id')
+            ->where('f.id_torneo', $id)->get()->getResultArray();
+
+    }
+
     public function getTorneoById($id)
     {
 
