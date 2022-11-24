@@ -8,7 +8,7 @@
                     </h1>
                     <div class="input-group input-group-sm" style="margin: 10px 0 10px 0">
                         <button type="button" class="btn btn-default col-md-2 float-left" data-toggle="modal" data-target="#modal-default">
-                            Agregar Partido
+                            Agregar Pronostico
                         </button>
                         <input type="text" name="table_search"
                                style="margin-left: auto"
@@ -45,7 +45,7 @@
                                 <td>
                                     <a href="<?php echo base_url('partido/delete/'.$e['id']);?>" onclick="return deletePartido()"><i class="fa-solid fa-trash-can"></i></a>
 
-                                    <a href="#" onclick="actualizarPartido(<?= $e['id']?>, '<?php echo $e['fecha'] ?>', '<?php echo $e['hora'] ?>', '<?= $e['id_local'] ?>', '<?= $e['id_visitante'] ?>')">
+                                    <a href="#<?php echo base_url('partido/delete/'.$e['id']);?>" onclick="actualizarPartido(<?= $e['id']?>, '<?php echo $e['fecha'] ?>', '<?php echo $e['hora'] ?>', '<?php echo $e['local'] ?>', '<?php echo $e['visitante'] ?>')">
                                         <i class="fa-solid fa-pen"></i>
                                     </a>
                                 </td>
@@ -83,7 +83,7 @@
                                     <select class="form-select col-md-12" id="local_select"  name="local_select" aria-label="Default select example">
                                         <option selected="">--</option>
                                         <?php foreach ($equiposLocales as $el) : ?>
-                                            <option id="<?= $el['id'] ?>" name="<?= $ev['id'] ?>" value="<?= $el['id'] ?>"><?= $el['nombre'] ?> </option>
+                                            <option id="id_local" name="id_local" value="<?php echo $el['id'] ?>"><?= $el['nombre'] ?> </option>
                                         <?php endforeach; ?>
                                     </select>
                                 </div>
@@ -92,13 +92,13 @@
                                     <select class="form-select col-md-12" id="visitante_select" name="visitante_select" aria-label="Default select example">
                                         <option selected="">--</option>
                                         <?php foreach ($equiposVisitantes as $ev) : ?>
-                                            <option id="<?= $ev['id'] ?>" name="<?= $ev['id'] ?>" value="<?= $ev['id'] ?>"><?= $ev['nombre'] ?></option>
+                                            <option id="<?php echo $ev['nombre'] ?>" name="id_visitante" value="<?php echo $ev['id'] ?>"><?= $ev['nombre'] ?></option>
                                         <?php endforeach; ?>
                                     </select>
                                 </div>
                                 <div class="modal-footer justify-content-between">
-                                        <button type="button" class="btn btn-default" data-dismiss="modal">Cancelar</button>
-                                        <input type="submit" name="submit" class="btn btn-primary" value="Guardar">
+                                    <button type="button" class="btn btn-default" data-dismiss="modal">Cancelar</button>
+                                    <input type="submit" name="submit" class="btn btn-primary" value="Guardar">
                                 </div>
                             </form>
                         </div>

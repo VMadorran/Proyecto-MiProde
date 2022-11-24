@@ -32,23 +32,20 @@ class PartidoController extends BaseController
     public function createPartido()
     {
         $partidoModel = new PartidoModel();
-        $id = $this->request->getPost('id_partido');
+        $id = $this->request->getPost('id');
         $data = [
             'fecha' => $this->request->getPost('fecha'),
             'hora' => $this->request->getPost('hora'),
-            'id_local' => $this->request->getPost('id_local'),
-            'id_visitante' => $this->request->getPost('id_visitante')
+            'id_local' => $this->request->getPost('local_select'),
+            'id_visitante' => $this->request->getPost('visitante_select'),
         ];
-        echo $data['id_local'];
-        echo $id;
+
         if ($id) {
-            echo "in update";
-            $partidoModel->where('id_partido', $id)->update($id, $data);
+            $partidoModel->where('id', $id)->update($id, $data);
         } else {
-             echo "in insert";
              $partidoModel->insert($data);
         }
-        //return $this->response->redirect(site_url('/list-partido'));
+        return $this->response->redirect(site_url('/list-partido'));
 
     }
 
@@ -59,6 +56,13 @@ class PartidoController extends BaseController
         $equipoModel = new EquipoModel();
         $equiposLocales = $equipoModel->findAll();
         return  $equiposLocales;
+    }
+
+    public function deletePartido($id = NULL)
+    {
+        $partidoModel = new PartidoModel();
+        $partidoModel->where('id', $id)->delete($id);
+        return $this->response->redirect(site_url('/list-partido'));
     }
 
 }

@@ -39,7 +39,7 @@
 
                         <?php foreach ($partidos as $p) : ?>
                             <tr>
-                                <td style="visibility: hidden;"><?= $p['id_partido'] ?></td>
+                               <td style="visibility: hidden;"><?= $p['id_partido'] ?></td>
                                 <td><?= $p['fecha'] ?></td>
                                 <td><?= $p['hora'] ?></td>
                                 <td><?= $p['local'] ?></td>
@@ -57,4 +57,4 @@
             <!-- /.card -->
         </div>
     </div>
-
+</div>

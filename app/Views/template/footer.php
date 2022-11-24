@@ -17,7 +17,7 @@
      
     </div>
     <!-- Default to the left -->
-    <strong>Copyright &copy; 2022</strong> All rights reserved.
+    <strong>Copyright &copy; 2022</strong> Todos los derechos reservados.
   </footer>
   </div>
   <!-- ./wrapper -->

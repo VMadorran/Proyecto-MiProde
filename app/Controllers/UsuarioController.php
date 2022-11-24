@@ -18,7 +18,7 @@ class UsuarioController extends BaseController
 
         return view('template/header')
             . view('template/sidebar')
-            . view('template/tablaUsuario', $data)
+            . view('template/list-usuario', $data)
             . view('template/footer');
 
     }
@@ -30,6 +30,7 @@ class UsuarioController extends BaseController
 
         $data = [
             'nombre_usuario' => $this->request->getPost('nombre_usuario'),
+            'id_rol' => '2',
             'contraseña' => $this->request->getPost('contraseña'),
             'dni' => $this->request->getPost('dni'),
             'nombre' => $this->request->getPost('nombre'),
@@ -42,13 +43,13 @@ class UsuarioController extends BaseController
         } else {
             $usuarioModel->insert($data);
         }
-        return $this->response->redirect(site_url('/tablaUsuario'));
+        return $this->response->redirect(site_url('/list-usuario'));
     }
 
     public function deleteUsuario($id = NULL)
     {
         $usuarioModelo = new UsuarioModel();
         $usuarioModelo->where('id', $id)->delete($id);
-        return $this->response->redirect(site_url('/tablaUsuario'));
+        return $this->response->redirect(site_url('/list-usuario'));
     }
 }

@@ -15,6 +15,8 @@ class LoginController extends BaseController
 
     public function login(){
 
+        $validation = \Config\Services::validation();
+        $session = session();
 
         $loginModel= new LoginModel();
         $nombre_usuario= $this->request->getPost('nombre_usuario');
@@ -35,7 +37,7 @@ class LoginController extends BaseController
                     'contraseña'=>$data['contraseña'],
                     'logged'=>true
                 ];
-                session()->set($data_session);
+                $session->set($data_session);
                 return redirect()->to('/tablaEquipo');
             }
 

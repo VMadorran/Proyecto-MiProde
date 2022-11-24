@@ -36,7 +36,7 @@ $routes->set404Override();
 // We get a performance increase by specifying the default
 // route since we don't have to scan directories.
 $routes->get('/', 'Home::index');
-$routes->get('/tablaEquipo', 'EquipoController::index');
+$routes->get('/list-equipo', 'EquipoController::index');
 $routes->get('/equipo/delete/(:num)','EquipoController::deleteEquipo/$1');
 $routes->get('/get-equipo/(:num)','EquipoController::getEquipo/$1');
 $routes->post( 'submit-equipo', 'EquipoController::createEquipo');
@@ -45,11 +45,11 @@ $routes->post( 'submit-equipo', 'EquipoController::createEquipo');
 /*
  *  USUARIOS
  */
-$routes->get('tablaUsuario', 'UsuarioController::index');
+$routes->get('/list-usuario', 'UsuarioController::index');
 $routes->get('usuario/delete/(:num)','UsuarioController::eliminarUsuario/$1');
 $routes->get('get-usuario/(:num)','UsuarioController::obtenerUsuario/$1');
 $routes->post('update-usuario/(:num)','UsuarioController::actualizarUsuario/$1');
-$routes->post( 'submit-usuario', 'UsuarioController::agregarUsuario');
+$routes->post( 'submit-usuario', 'UsuarioController::createUsuario');
 
 /*
  *   LOGIN
@@ -61,7 +61,7 @@ $routes->get('log-out', 'LoginController::logout');
 /*
  * FASE
  */
-$routes->get('table-fase', 'FaseController::index');
+$routes->get('list-fase', 'FaseController::index');
 $routes->get('fase/delete/(:num)','FaseController::deleteFase/$1');
 $routes->get('get-fase/(:num)','FaseController::getFase/$1');
 $routes->get('get-partidos/(:num)','FaseController::getPartidos/$1');
@@ -83,7 +83,7 @@ $routes->post('/new-user','SignupController::signUp');
  */
 $routes->get('/list-partido', 'PartidoController::index');
 $routes->post('submit-partido','PartidoController::createPartido');
-$routes->post( '/list-partido', 'PartidoController::findAllVisitantes');
+$routes->get('/partido/delete/(:num)','PartidoController::deletePartido/$1');
 
 
 

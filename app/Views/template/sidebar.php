@@ -17,6 +17,11 @@
                 <a href="#" class="d-block"> <?= session()->nombre_usuario ?> </a>
 
             </div>
+            <div style="float: right;margin-left: auto;padding-right: 10px">
+                <a href="<?= base_url('/log-out')?>">
+                    <i class="fa-solid fa-right-from-bracket"></i>
+                </a>
+            </div>
         </div>
 
         <!-- SidebarSearch Form -->
@@ -37,10 +42,42 @@
         <nav class="mt-2">
             <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
                 <li class="nav-item">
-                    <a href="../gallery.html" class="nav-link">
-                        <i class="nav-icon far fa-image"></i>
+                    <a href="<?= site_url('/list-equipo')?>" class="nav-link">
+                        <i class="nav-icon fa fa-users"></i>
                         <p>
-                            Gallery
+                           Equipos
+                        </p>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="<?= site_url('/list-partido')?>" class="nav-link">
+                        <i class="nav-icon fa fa-futbol"></i>
+                        <p>
+                           Partidos
+                        </p>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="<?= site_url('/list-fase')?>" class="nav-link">
+                        <i class="nav-icon fa fa-calendar-alt"></i>
+                        <p>
+                            Fases
+                        </p>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="<?= site_url('/list-torneo')?>" class="nav-link">
+                        <i class="nav-icon fa fa-trophy"></i>
+                        <p>
+                            Torneos
+                        </p>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="<?= site_url('/list-usuario')?>" class="nav-link">
+                        <i class="nav-icon fa fa-user-plus"></i>
+                        <p>
+                            Usuarios
                         </p>
                     </a>
                 </li>
@@ -50,11 +87,6 @@
         <!-- /.sidebar-menu -->
     </div>
     <!-- /.sidebar -->
-    <div>
-        <a href="<?= base_url('/log-out')?>">
-            <i class="fa-solid fa-right-from-bracket"></i>
-        </a>
-    </div>
 
 </aside>
 

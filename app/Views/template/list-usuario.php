@@ -48,7 +48,8 @@
                                 <td><?= $u['email'] ?></td>
                                 <td><?= $u['fecha_nacimiento'] ?> </td>
                                 <td>
-                                    <a href="<?php echo base_url('/usuario/delete/'.$u['id']);?>"  onclick="return bajaUsuario()">
+                                    <a href="<?php echo base_url('/usuario/delete/'.$u['id']);?>"
+                                       onclick="return bajaUsuario()">
                                         <i class="fa-solid fa-trash-can"></i></a>
 
                                     <a href="#" onclick="actualizarUsuario(<?= $u['id']?>, '<?php echo $u['nombre_usuario'] ?>','<?php echo $u['contraseña'] ?>',

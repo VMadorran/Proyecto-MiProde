@@ -11,10 +11,7 @@ function onLocalChange(){
             $('#visitante').html(data);
         }
     );
-
-
    // location.href='createFase';
-
 }
 
 function guardarPartido() {
@@ -25,7 +22,7 @@ function guardarPartido() {
         return false;
 }
 
-function bajaPartido() {
+function deletePartido() {
 
     if (confirm("¿Desea eliminar el partido seleccionado?") == true) {
         return true;
@@ -36,9 +33,8 @@ function bajaPartido() {
 function actualizarPartido($id, $fecha, $hora, $local, $visitante) {
     let title = document.getElementById("form-title");
     title.innerHTML = 'Actulización de Partido';
-
     console.log($local);
-
+    console.log($visitante);
     $(document).ready(function() {
 
         $("#id").val($id);
@@ -51,7 +47,7 @@ function actualizarPartido($id, $fecha, $hora, $local, $visitante) {
 }
 
 function validar() {
-    let x = document.getElementById("formulario");
+    let x = document.getElementById("formulario-partido");
     let i;
     let validos = true;
     for (i = 0; i < x.length; i++) {

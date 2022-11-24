@@ -18,7 +18,7 @@ class EquipoController extends BaseController
 
         return view('template/header')
             . view('template/sidebar')
-            . view('template/tablaEquipo', $data)
+            . view('template/list-equipo', $data)
             . view('template/footer');
 
     }
@@ -39,13 +39,13 @@ class EquipoController extends BaseController
         } else {
             $equipoModel->insert($data);
         }
-        return $this->response->redirect(site_url('/tablaEquipo'));
+        return $this->response->redirect(site_url('/list-equipo'));
     }
 
     public function deleteEquipo($id = NULL)
     {
         $equipoModelo = new EquipoModel();
         $equipoModelo->where('id', $id)->delete($id);
-        return $this->response->redirect(site_url('/tablaEquipo'));
+        return $this->response->redirect(site_url('/list-equipo'));
     }
 }

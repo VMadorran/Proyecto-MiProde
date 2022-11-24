@@ -54,7 +54,11 @@ class FixtureModel extends Model
         endforeach;  dd($fixture);
         //dd($fases)
 
+    }
 
+    public function getPartidosByFase($idFase) {
+        $partidoModel = new PartidoModel();
+        $partidos = $partidoModel->getPartidosFase($idFase);
     }
 
 }
