@@ -34,11 +34,12 @@ class LoginController extends BaseController
                 $data_session=[
                     'id'=>$data['id'],
                     'nombre_usuario'=>$data['nombre_usuario'],
+                    'id_rol'=>$data['id_rol'],
                     'contraseña'=>$data['contraseña'],
                     'logged'=>true
                 ];
                 $session->set($data_session);
-                return redirect()->to('/tablaEquipo');
+                return redirect()->to('/fixture');
             }
 
         } else{
@@ -53,6 +54,6 @@ class LoginController extends BaseController
 
     public function logout(){
         session()->destroy();
-        return redirect()->to('/tablaEquipo');
+        return redirect()->to('/login');
     }
 }

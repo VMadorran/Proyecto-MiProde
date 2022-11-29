@@ -4,6 +4,9 @@
     <div class="card card-outline card-primary">
         <div class="card-header text-center">
             <a href="../../index2.html" class="h1"><b>Mi Prode</b></a>
+            <div style="padding: 15px">
+                <span style="font-weight: bold">Iniciar Sesión</span>
+            </div>
         </div>
         <div class="card-body">
             <p class="login-box-msg"></p>

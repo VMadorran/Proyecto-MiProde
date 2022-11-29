@@ -50,9 +50,9 @@ class FaseController extends BaseController
         return $this->response->redirect(site_url('/list-fase'));
     }
 
-    public function  getPartidos($id = NULL){
+    public function getPartidos($id = NULL){
 
-        $faseModel= new FaseModel();
+        $faseModel= new PartidoModel();
         $partidos=$faseModel->getPartidosFase($id);
         $data = array('partidos'=>$partidos);
 

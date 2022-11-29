@@ -41,14 +41,14 @@
         <!-- Sidebar Menu -->
         <nav class="mt-2">
             <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
-                <li class="nav-item">
-                    <a href="<?= site_url('/list-equipo')?>" class="nav-link">
-                        <i class="nav-icon fa fa-users"></i>
-                        <p>
-                           Equipos
-                        </p>
-                    </a>
-                </li>
+                <li class="nav-item" >
+                    <a href = "<?= site_url('/list-equipo')?>" class="nav-link" >
+                        <i class="nav-icon fa fa-users" ></i >
+                        <p >
+                    Equipos
+                        </p >
+                    </a >
+                </li >
                 <li class="nav-item">
                     <a href="<?= site_url('/list-partido')?>" class="nav-link">
                         <i class="nav-icon fa fa-futbol"></i>
@@ -89,14 +89,14 @@
                         </p>
                     </a>
                 </li>
-                <li class="nav-item">
+                <!--<li class="nav-item">
                     <a href="<?= site_url('/torneos')?>" class="nav-link">
                         <i class="nav-icon fa fa-money-bill-wave"></i>
                         <p>
                             Apuestas
                         </p>
                     </a>
-                </li>
+                </li>-->
             
             </ul>
         </nav>

@@ -69,4 +69,45 @@ class ApuestaModel extends Model
             ->where('id', $idFase)
             ->update();
     }
+
+    public function actualTorneos()
+    {
+
+        $builder = $this->db->table('torneo t');
+        $builder->select('t.id, t.nombre, t.fecha_inicio, t.fecha_fin')
+            ->join('fase f', 't.id = f.id_torneo')
+            ->join('partido p', 'f.id = p.id_fase')
+            ->where('p.fecha>=CURRENT_DATE')
+            ->where('p.hora<CURRENT_TIME')
+            ->groupBy('t.id');
+        $resultado = $builder->get()->getResultArray();
+        return $resultado;
+    }
+
+    public function actualFase($idTorneo)
+    {
+        $builder = $this->db->table('fase f');
+        $builder->select('f.id, f.nombre, f.fecha_inicio, fecha_fin')
+            ->join('partido p', 'f.id = p.id_fase')
+            ->where('p.fecha>=CURRENT_DATE')
+            ->where('p.hora<CURRENT_TIME')
+            ->where('f.id_torneo', $idTorneo)
+            ->groupBy('f.id');
+        $resultado = $builder->get()->getResultArray();
+        // dd($resultado);
+        return $resultado;
+    }
+
+    public function actualPartido($idFase){
+
+        $builder = $this->db->table('partido P');
+        $builder->select('p.id_partido, el.nombre as local, ev.nombre visitante ')
+            ->join('equipo el', 'p.id_local = el.id')
+            ->join('equipo ev', 'p.id_visitante = ev.id')
+            ->where('p.fecha>=CURRENT_DATE')
+            ->where('p.hora<CURRENT_TIME')
+            ->where('p.id_fase');
+        $resultado = $builder->get()->getResultArray();
+        dd($resultado);
+    }
 }

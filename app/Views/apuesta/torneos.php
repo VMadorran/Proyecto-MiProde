@@ -13,11 +13,11 @@
                     <div class="card partido-main-content">
                         <div class="partido-item-container">
                             <div class="partido-item">
-                                <span>Inglaterra</span>
+                                <span></span>
                             </div>
                         </div>
-                        <button class="time"><a href="<?php echo base_url('apuesta/list-apuesta/'.$t['id']);?>"</a>
-                            Apostar</button>
+                        <button class="time"><a href="<?php echo base_url('apuesta/list-fases/'.$t['id']);?>"</a>
+                            Fases</button>
                     </div>
                 </div>
             </div>

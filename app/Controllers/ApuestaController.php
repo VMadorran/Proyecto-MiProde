@@ -31,7 +31,7 @@ class ApuestaController extends BaseController
 
     }
 
-    public function apuestas()
+    public function apuestas($id)
     {
         $apuestaModel = new ApuestaModel();
         $apuestas = $apuestaModel->findAll();
@@ -88,6 +88,59 @@ class ApuestaController extends BaseController
             . view('fase/partidos-fase', $data)
             . view('template/footer');
 
+    }
+
+    public function showTorneo()
+    {
+        $torneoModel = new ApuestaModel();
+        $torneos = $torneoModel->actualTorneos();
+
+
+        $data = array(
+            'titulo' => 'Torneos Vigentes',
+            'torneos' => $torneos
+        );
+
+        return view('template/header')
+            . view('template/sidebar')
+            . view('apuesta/torneos', $data)
+            . view('template/footer');
+    }
+
+
+    public function showFases($idTorneo)
+    {
+        $apuestaModel = new ApuestaModel();
+        $fases = $apuestaModel->actualFase($idTorneo);
+
+        $data = array(
+            'titulo' => 'Fases Vigentes',
+            'fases' => $fases
+        );
+
+
+        return view('template/header')
+            . view('template/sidebar')
+            . view('apuesta/list-fases', $data)
+            . view('template/footer');
+
+
+    }
+
+    public function showPartidos($idFase){
+        $apuestaModel = new ApuestaModel();
+        $partidos = $apuestaModel->actualFase($idFase);
+
+        $data = array(
+            'titulo' => 'Partidos Vigentes',
+            'partidos' => $partidos
+        );
+
+
+        return view('template/header')
+            . view('template/sidebar')
+            . view('apuesta/list-fases', $data)
+            . view('template/footer');
     }
 
 }

@@ -64,8 +64,8 @@ $routes->get('log-out', 'LoginController::logout');
 $routes->get('list-fase', 'FaseController::index');
 $routes->get('fase/delete/(:num)','FaseController::deleteFase/$1');
 $routes->get('get-fase/(:num)','FaseController::getFase/$1');
-$routes->get('get-partidos/(:num)','FaseController::getPartidos/$1');
-$routes->get('add-partidos/(:num)','FaseController::addPartidos/$1');
+$routes->get('/get-partidos/(:num)','FaseController::getPartidos/$1');
+$routes->get('/add-partidos/(:num)','FaseController::addPartidos/$1');
 $routes->post('submit-fase', 'FaseController::addFase');
 $routes->get('fase/add-partido/(:any)', 'FaseController::addPartidoToFase/$1');
 $routes->get('fase/delete-partido/(:any)', 'FaseController::deletePartido/$1');
@@ -104,15 +104,13 @@ $routes->get('torneo/delete-fase/(:any)','TorneoController::deleteFaseOfTorneo/$
 $routes->get('fixture','FixtureController::index');
 
 
-
-
-
-
 /*
  * APUESTAS
  */
 $routes->get('torneos', 'ApuestaController::index');
 $routes->get('apuesta/list-apuesta/(:any)', 'ApuestaController::apuestas/$1');
+$routes->get('apuesta/list-torneos/(:num)','ApuestaController::showFases/$1');
+$routes->get('apuesta/list-fases/(:num)','ApuestaController::showFases/$1');
 
 /*
  * --------------------------------------------------------------------

@@ -126,7 +126,7 @@
                     </div>
                 </div>
             </div>
-            <div class="partidos-container">
+            <!--<div class="partidos-container">
                 <div class="col-sm-3" style="margin-right: 10px;">
                     <div class="card">
                         <div class="card-body">
@@ -167,10 +167,10 @@
                         </div>
                     </div>
                 </div>
-            </div>
+            </div>-->
 
             <!-- Fases -->
-            <div class="partidos-container">
+            <div class="partidos-container" style="padding-left: 80px;padding-right: 80px">
                 <?php foreach ($fases as $f) : ?>
                 <div class="col-sm-3" style="margin-right: 10px;">
                     <div class="card">

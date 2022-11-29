@@ -12,9 +12,10 @@ class PartidoModel extends Model
 
     function findAllPartidos() {
         $builder = $this->db->table('partido p');
-        $builder->select('p.*, el.id id_local, el.nombre local, ev.id id_visitante, ev.nombre visitante')
+        $builder->select('p.*, el.id id_local, el.nombre local, ev.id id_visitante, ev.nombre visitante, f.nombre fase')
             -> join('equipo el', 'p.id_local = el.id')
-            -> join('equipo ev', 'p.id_visitante = ev.id');
+            -> join('equipo ev', 'p.id_visitante = ev.id')
+            -> join('fase f', 'f.id = p.id_fase');
         $result = $builder->get()->getResultArray();
         return $result;
     }
