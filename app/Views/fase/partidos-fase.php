@@ -39,12 +39,12 @@
 
                         <?php foreach ($partidos as $p) : ?>
                             <tr>
-                               <td style="visibility: hidden;"><?= $p['id_partido'] ?></td>
+                               <td style="visibility: hidden;"><?= $p['id'] ?></td>
                                 <td><?= $p['fecha'] ?></td>
                                 <td><?= $p['hora'] ?></td>
                                 <td><?= $p['local'] ?></td>
                                 <td><?= $p['visitante'] ?></td>
-                                <td> <a href="<?php echo base_url('/fase/delete-partido/'.($id).'/'.$p['id_partido']);?>" ><i class="fa-solid fa-trash-can"></i></a></td>
+                                <td> <a href="<?php echo base_url('/fase/delete-partido/'.($id).'/'.$p['id']);?>" ><i class="fa-solid fa-trash-can"></i></a></td>
                             </tr>
                         <?php endforeach; ?>
 

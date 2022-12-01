@@ -65,7 +65,7 @@ $routes->get('list-fase', 'FaseController::index');
 $routes->get('fase/delete/(:num)','FaseController::deleteFase/$1');
 $routes->get('get-fase/(:num)','FaseController::getFase/$1');
 $routes->get('/get-partidos/(:num)','FaseController::getPartidos/$1');
-$routes->get('/add-partidos/(:num)','FaseController::addPartidos/$1');
+$routes->get('add-partidos/(:num)','FaseController::addPartidos/$1');
 $routes->post('submit-fase', 'FaseController::addFase');
 $routes->get('fase/add-partido/(:any)', 'FaseController::addPartidoToFase/$1');
 $routes->get('fase/delete-partido/(:any)', 'FaseController::deletePartido/$1');

@@ -11,14 +11,10 @@ class FixtureController extends BaseController
     {
 
         $fixtureModel = new FixtureModel();
-        $fases = $fixtureModel->getFasesByTorneoId(1);
-        $data = array( 'fases' => $fases);
-        $fasesWithEquipos = array();
-        foreach ($fases as $f) {
-            $fasesWithEquipos = array('fase', $f['nombre'],);
-        }
+        $torneos = $fixtureModel->getTorneoById(1);
+        $data = array( 'torneos' => $torneos);
 
-
+        //dd($data);
         return view('template/header')
             . view('template/sidebar')
             . view('fixture/fixture', $data)

@@ -25,11 +25,12 @@ class PartidoModel extends Model
     public function getPartidosFase($id)
     {
         $builder = $this->db->table('partido p');
-        $builder->select('p.id_partido, p.fecha, p.hora, el.nombre local, ev.nombre visitante')
+        $builder->select('p.id, p.fecha, p.hora, el.nombre local, ev.nombre visitante')
             ->join('equipo el', 'p.id_local = el.id')
             ->join('equipo ev', 'p.id_visitante = ev.id')
             ->where('p.id_fase', $id);
         $result = $builder->get()->getResultArray();
+      //  dd($result);
         return $result;
     }
 
@@ -58,7 +59,7 @@ class PartidoModel extends Model
 
         $builder = $this->db->table('partido p');
 
-        $builder->select('p.id_partido, p.fecha, p.hora, el.nombre local, ev.nombre visitante')
+        $builder->select('p.id, p.fecha, p.hora, el.nombre local, ev.nombre visitante')
             ->join('equipo el', 'p.id_local = el.id')
             ->join('equipo ev', 'p.id_visitante = ev.id')
             ->where('p.id_fase IS NULL')
@@ -74,7 +75,7 @@ class PartidoModel extends Model
         $builder = $this->db->table('partido p');
 
         $builder->set('id_fase', NULL)
-            ->where('id_partido', $idPartido)
+            ->where('id', $idPartido)
             ->update();
     }
 
@@ -84,7 +85,7 @@ class PartidoModel extends Model
         $builder = $this->db->table('partido p');
 
         $builder->set('id_fase', $idFase)
-            ->where('id_partido', $idPartido)
+            ->where('id', $idPartido)
             ->update();
     }
 }

@@ -56,7 +56,7 @@ class SignUpController extends BaseController
         return false;
     }
 
-    public function createUser(){
+    /*public function createUser(){
         $usuarioModel = new UsuarioModel();
 
         $data=[
@@ -64,8 +64,10 @@ class SignUpController extends BaseController
             'contraseña'=>$this->request->getPost('contraseña')
         ];
 
-        return view('');
-    }
+        return view('');  }* */
+
+    
+  
 
 
 }

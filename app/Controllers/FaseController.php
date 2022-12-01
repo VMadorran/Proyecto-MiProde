@@ -50,17 +50,48 @@ class FaseController extends BaseController
         return $this->response->redirect(site_url('/list-fase'));
     }
 
-    public function getPartidos($id = NULL){
+    public function getPartidos($id)
+    {
 
         $faseModel= new PartidoModel();
         $partidos=$faseModel->getPartidosFase($id);
         $data = array('partidos'=>$partidos);
+        $partidoModel = new PartidoModel();
+        $partidos = $partidoModel->getPartidosFase($id);
+        $data = array(
+            'partidos' => $partidos,
+            'id'=>$id
+        );
+        return view('template/header')
+        . view('template/sidebar')
+        . view('fase/partidos-fase', $data)
+        . view('template/footer');
+    }
+
+
+    public function addPartidos($id)
+    {
+
+        $partidoModel = new PartidoModel();
+
+        $data = array(
+            'partidos' => $partidoModel->listPartidosSinFase($id),
+            'id' => $id
+
+        );
 
         return view('template/header')
             . view('template/sidebar')
-            . view('fase/partidos-fase', $data)
+            . view('fase/add-partidos', $data)
             . view('template/footer');
+    }
 
+    public function addPartidoToFase($id, $idPartido)
+    {
+        // dd($idFase, $idPartido);
+        $partidoModel = new PartidoModel();
+        $partidoModel->addFaseToPartido($id, $idPartido);
+        return $this->response->redirect(site_url('/add-partidos/'. $id));
     }
 
 }
