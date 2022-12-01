@@ -75,7 +75,7 @@ $routes->get('fase/delete-partido/(:any)', 'FaseController::deletePartido/$1');
  */
 
 $routes->get('/signup', 'SignUpController::index');
-$routes->post('/new-user','SignupController::signUp');
+$routes->post('new-user','SignUpController::signUp');
 
 
 /*
