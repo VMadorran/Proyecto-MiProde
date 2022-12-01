@@ -33,15 +33,15 @@ function deletePartido() {
 function actualizarPartido($id, $fecha, $hora, $local, $visitante) {
     let title = document.getElementById("form-title");
     title.innerHTML = 'Actulización de Partido';
-    console.log($local);
-    console.log($visitante);
+    console.log('local: ' + $local);
+    console.log('visitante: ' + $visitante);
     $(document).ready(function() {
 
         $("#id").val($id);
         $("#fecha").val($fecha);
         $("#hora").val($hora);
-        document.getElementById($local).selected = true;
-        document.getElementById($visitante).selected = true;
+        $("#local_select").val($local);
+        $("#visitante_select").val($visitante);
         $("#modal-default").modal('show');
     });
 }

@@ -21,6 +21,7 @@ class SignUpController extends BaseController
             $usuarioModel = new SigninUsuarioModel();
             $id = $this->request->getPost('id');
             $data = [
+                'id_rol' => 2,
                 'nombre_usuario'=>$user,
                 'contraseña'=>$this->request->getPost('contraseña'),
                 'dni' => $dni,

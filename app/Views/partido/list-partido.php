@@ -45,7 +45,8 @@
                                 <td>
                                     <a href="<?php echo base_url('partido/delete/'.$e['id']);?>" onclick="return deletePartido()"><i class="fa-solid fa-trash-can"></i></a>
 
-                                    <a href="#" onclick="actualizarPartido(<?= $e['id']?>, '<?php echo $e['fecha'] ?>', '<?php echo $e['hora'] ?>', '<?= $e['id_local'] ?>', '<?= $e['id_visitante'] ?>')">
+                                    <a href="#"
+                                       onclick="actualizarPartido(<?= $e['id']?>, '<?php echo $e['fecha'] ?>', '<?php echo $e['hora'] ?>', '<?= $e['id_local'] ?>', '<?= $e['id_visitante'] ?>')">
                                         <i class="fa-solid fa-pen"></i>
                                     </a>
                                 </td>
@@ -83,7 +84,7 @@
                                     <select class="form-select col-md-12" id="local_select"  name="local_select" aria-label="Default select example">
                                         <option selected="">--</option>
                                         <?php foreach ($equiposLocales as $el) : ?>
-                                            <option id="<?= $el['id'] ?>" name="<?= $ev['id'] ?>" value="<?= $el['id'] ?>"><?= $el['nombre'] ?> </option>
+                                            <option id="<?= $el['id'] ?>" name="<?= $el['id'] ?>" value="<?= $el['id'] ?>"><?= $el['nombre'] ?> </option>
                                         <?php endforeach; ?>
                                     </select>
                                 </div>
