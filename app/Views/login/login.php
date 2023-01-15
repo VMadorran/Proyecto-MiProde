@@ -56,10 +56,8 @@
     <link rel="stylesheet" href="<?= base_url('/css/login.css')?>">
     <title>Document</title>
 </head>
-<body class="hold-transition login-page">
-<div class="container-body">
-
-
+<body class="hold-transition login-page container-body">
+<div class="">
     <div id="overlay">
         <h1 class="main-title" style=" animation: neon1 1.5s ease-in-out infinite alternate;">MI PRODE
         </h1></div>
