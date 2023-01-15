@@ -16,7 +16,7 @@ class PropietaryGuard implements FilterInterface
             $id = session()->get('id_usuario');
             $id_parametro = $request->getUri()->getSegment($arguments[0]);
 
-            if ($rol !== 'Administrador' && $id !== $id_parametro) // Si no es administrador e intenta acceder a editar/eliminar/detalles de alguien que no es el usuario
+            if ($rol !== 'administrador' && $id !== $id_parametro) // Si no es administrador e intenta acceder a editar/eliminar/detalles de alguien que no es el usuario
             {
                 return redirect()->to(base_url('usuarios/perfil'))->with('mensaje_error', 'No posee permiso para esta operacion');
             }

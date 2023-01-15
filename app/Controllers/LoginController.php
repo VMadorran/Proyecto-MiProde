@@ -8,8 +8,8 @@ class LoginController extends BaseController
 
     public function index(){
 
-        return view('login/header')
-            .view('login/login')
+        return
+            view('login/login')
             . view('login/footer');
     }
 

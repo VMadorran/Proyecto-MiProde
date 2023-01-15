@@ -177,7 +177,7 @@
                     <span><?= $t['nombre'] ?></span>
                 </div>
                 <div>
-                    <?php foreach ($fases as $f) : ?>
+                    <?php foreach ($fases['fase'] as $f) : ?>
                         <div>
                             <span><?= $f['nombre'] ?></span>
                         </div>
