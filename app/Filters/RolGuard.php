@@ -10,6 +10,7 @@ class RolGuard implements FilterInterface
 {
     public function before(RequestInterface $request, $arguments = null)
     {
+    
         $permisos = [
             'administrador' => ['administrador'],
             'participante' => ['participante'],
