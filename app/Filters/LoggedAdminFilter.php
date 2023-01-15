@@ -11,7 +11,7 @@ class LoggedAdminFilter implements FilterInterface
     public function before(RequestInterface $request, $arguments = null)
     {
 
-        if (session()->rol != 'ADMIN' ) {
+        if (session()->rol != 'administrador' ) {
             return redirect()->to(site_url('/'));
         }
     }
