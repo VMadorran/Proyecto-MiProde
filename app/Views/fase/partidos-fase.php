@@ -7,7 +7,7 @@
                         Partidos de la fase
                     </h1>
                     <div class="input-group input-group-sm" style="margin: 10px 0 10px 0">
-                        <a class="btn btn-primary" href="<?php echo base_url('/table-fase')?>" role="button"
+                    <a class="btn btn-primary" href="<?php echo base_url('/table-fase')?>" role="button"
                            style="background-color: #f8f9fa; border-color: #ddd; color: #444;">Atrás</a>
                         <input type="text" name="table_search"
                                style="margin-left: auto"

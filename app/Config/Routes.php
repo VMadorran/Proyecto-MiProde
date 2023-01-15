@@ -35,8 +35,10 @@ $routes->set404Override();
 
 // We get a performance increase by specifying the default
 // route since we don't have to scan directories.
+
+
 $routes->get('/', 'Home::index');
-$routes->get('/list-equipo', 'EquipoController::index');
+$routes->get('/list-equipo', 'EquipoController::index', ['filter'=>['loggedFilter', \App\Filters\LoggedFilter::class]]);
 $routes->get('/equipo/delete/(:num)','EquipoController::deleteEquipo/$1');
 $routes->get('/get-equipo/(:num)','EquipoController::getEquipo/$1');
 $routes->post( 'submit-equipo', 'EquipoController::createEquipo');
